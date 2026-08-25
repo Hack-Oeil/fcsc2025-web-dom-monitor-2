@@ -1,0 +1,25 @@
+services:
+  ssh-581.cyrhades.fr:
+    container_name: ssh-581
+    build:
+      context: ./.docker/ssh
+      args:
+        LANGUAGE: ${LANGUAGE:-fr}
+    labels:
+      ho.ctf.cyrhades: "challenge"
+      ho.ctf.cyrhades.webssh: "1"
+    environment:
+      SSH_HOSTNAME: "ssh-581.cyrhades.fr"
+      SSH_PORT: 22
+      SSH_USERNAME: "cyrhades"
+      SSH_PASSWORD: "secret"
+    restart: unless-stopped
+  app.dom-monitor.fr.cyrhades.fr:
+    image: anssi/fcsc2025-web-dom-monitor:latest
+    ports:
+      - ${PORT}:8000
+    labels:
+      ho.ctf.cyrhades: "challenge"
+      
+  bot.dom-monitor.fr.cyrhades.fr:
+    image: anssi/fcsc2025-web-dom-monitor-bot:latest

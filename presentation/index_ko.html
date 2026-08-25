@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ko">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Cyrhades CTF</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 창이 iframe 내에 있는지 확인
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // 구문 강조 활성화:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js 로드되지 않음!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #581</h3>
+                            <h2 class="section-title">DOM Monitor (Part 2)</h2>
+                            <p>
+취약점 보고서는 인상적이었지만, 승인받으려면 /get_flag 바이너리를 실행할 수 있음을 증명해야 합니다. 이 보안 취약점의 실제 영향을 증명해 주시겠습니까? 실행 증명을 기대하고 있겠습니다! :)
+<br /><br />
+웹 애플리케이션: <a href="http://localhost:8000/">http://localhost:8000/</a>
+<br /><br />
+봇: <code>nc localhost 4000</code>
+                            </p>
+                            <h4>분석할 파일:</h4>
+                            <p>../files/dom-monitor.tar.xz</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                공식 링크:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/web/fcsc2025-web-dom-monitor-2/">https://hackropole.fr/fr/challenges/web/fcsc2025-web-dom-monitor-2/</a>
+                                <br />
+                                작성자: Mizu
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>학습</h3>
+                            <h2 class="section-title">문서 및 비디오</h2>
+                            <p class="section-subtitle">
+                                현재 문서가 없습니다
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>도움말</h3>
+                            <h2 class="section-title">팁 및 힌트</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">디스코드 스레드</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="페이지 맨 위로 이동" title="페이지 상단으로"></a>
+    </div>
+</body>
+
+</html>

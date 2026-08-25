@@ -1,0 +1,10 @@
+services:
+  app.dom-monitor.fr:
+    image: anssi/fcsc2025-web-dom-monitor:latest
+    ports:
+      - "8000:8000"
+
+  bot.dom-monitor.fr:
+    image: anssi/fcsc2025-web-dom-monitor-bot:latest
+    ports:
+      - "4000:4000"
